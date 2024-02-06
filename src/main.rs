@@ -3,7 +3,7 @@ use ethers::prelude::*;
 
 #[tokio::main]
 async fn main() {
-    let rpc_url = "https://mainnet.infura.io/v3/c2bd025792ef4bb6ba0bbbad55740a92"; //declare our rpc url
+    let rpc_url = "https://mainnet.infura.io/v3/"; //declare our rpc url
     let provider = Provider::try_from(rpc_url).unwrap(); // initiates the provider no error handleing error prone
 
     let app = Router::new().route("/", get(handler)).with_state(provider); //with state adding our provider above so we can share it and use it in other fucntions;
